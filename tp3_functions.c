@@ -21,3 +21,19 @@ int lireChoix(){
     scanf("%d",&choix);
     return choix;
 }
+
+int saisirNombreEleves(){
+    // lis le nombres d'eleves choisit par l'utilisateur
+
+    while (1){
+        int num;
+        printf("entrez le nombres d'eleves (1 a 30): ");
+        scanf("%d", &num);
+        if (1 <= num && num <= 30){
+            return num;
+        }
+        printf("valeur invalide\n");
+    }
+    
+
+}
