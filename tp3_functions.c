@@ -10,7 +10,7 @@ void afficherMenu(){
     printf("3. Afficher toutes les notes\n"); 
     printf("4. Afficher la moyenne d'un eleve\n");    
     printf("5. Afficher la moyenne generale\n");     
-    printf("4. Afficher la meilleur note d'un controle\n");
+    printf("6. Afficher la meilleur note d'un controle\n");
     printf("0. Quitter\n");     
 }
 
@@ -24,19 +24,19 @@ int lireChoix(){
 
 int saisirNombreEleves(){
     // lis le nombres d'eleves choisit par l'utilisateur
-
+  
+    int nombre_eleves;
     while (1){
-        int num;
         printf("entrez le nombres d'eleves (1 a 30): ");
-        scanf("%d", &num);
-        if (1 <= num && num <= 30){
-            return num;
+        scanf("%d", &nombre_eleves);
+        if (1 <= nombre_eleves && nombre_eleves <= 30){
+            return nombre_eleves;
         }
         printf("valeur invalide\n");
     }
 }
 
-int saisirNotes(int tab[100][100], int nombre_eleves){
+int saisirNotes(int tab_notes[100][100], int nombre_eleves){
     // place les notes des eleves donner par l'utilisateur dans un tableau 
 
     int note;
@@ -51,7 +51,7 @@ int saisirNotes(int tab[100][100], int nombre_eleves){
                 scanf("%d", &note);
 
                 if (0 <= note && note <= 20){
-                    tab[i][j] = note;
+                    tab_notes[i][j] = note;
                     break;
                 }
                 printf("valeur invalide\n");
@@ -90,7 +90,7 @@ void afficherNotes(int tab_notes[100][100], int nombre_eleves){
 
 float calculerMoyenneEleve(int indice_eleves, int tab_notes[100][100]){
 
-    float total = (tab_notes[indice_eleves-1][0] + tab_notes[indice_eleves-1][1] + tab_notes[indice_eleves][2]);
+    float total = (tab_notes[indice_eleves-1][0] + tab_notes[indice_eleves-1][1] + tab_notes[indice_eleves-1][2]);
     return total / 3;
 
 }
