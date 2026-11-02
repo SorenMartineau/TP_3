@@ -96,9 +96,21 @@ float calculerMoyenneEleve(int indice_eleves, int tab_notes[100][100]){
 }
 
 float calculerMoyenneGenerale(int nombre_eleves, int tab_notes[100][100]){
+
     float total = 0;
     for (int i = 1; i < nombre_eleves+1; i++){ 
         total += calculerMoyenneEleve(i, tab_notes);
     }
     return total / nombre_eleves;
+}
+
+int trouverMeilleureNoteControle(int controle, int nombre_eleves, int tab_notes[100][100]){
+
+    int max = -1;
+    for (int i = 0; i < nombre_eleves; i++){ 
+        if (tab_notes[i][controle-1] > max){
+            max = tab_notes[i][controle-1];
+        }
+    }
+    return max;
 }
