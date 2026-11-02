@@ -34,6 +34,28 @@ int saisirNombreEleves(){
         }
         printf("valeur invalide\n");
     }
-    
+}
 
+int saisirNotes(int tab[100][100], int nombre_eleves){
+    // place les notes des eleves donner par l'utilisateur dans un tableau 
+
+    int note;
+
+    for (int i = 0; i < nombre_eleves; i++){
+        printf("Eleve %d\n", i+1);
+
+        for (int j = 0; j < 3; j++){
+
+            while (1){
+                printf("  notes du controle %d (0 a 20): ", j+1);
+                scanf("%d\n", &note);
+                if (0 <= note && note <= 20){
+                    tab[i][j] = note;
+                    break;
+                }
+                printf("valeur invalide\n");
+            }
+    
+        } 
+    }
 }
