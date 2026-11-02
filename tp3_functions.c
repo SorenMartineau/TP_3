@@ -48,7 +48,8 @@ int saisirNotes(int tab[100][100], int nombre_eleves){
 
             while (1){
                 printf("  notes du controle %d (0 a 20): ", j+1);
-                scanf("%d\n", &note);
+                scanf("%d", &note);
+
                 if (0 <= note && note <= 20){
                     tab[i][j] = note;
                     break;
@@ -58,4 +59,31 @@ int saisirNotes(int tab[100][100], int nombre_eleves){
     
         } 
     }
+}
+
+void afficherNotes(int tab_notes[100][100], int nombre_eleves){
+
+
+    printf("Tableu des notes\n");
+    printf("Eleve C1 C2 C3\n");
+    for (int i = 0; i < nombre_eleves; i++){
+        if (i < 10){
+            printf("    %d", i+1);
+        }
+        else{
+            printf("   %d", i+1);
+        }
+
+        for (int j = 0; j < 3; j++){
+            if (tab_notes[i][j] < 10){
+                printf("  %d", tab_notes[i][j]);
+            }
+            else{
+                printf(" %d", tab_notes[i][j]);
+            }
+        }
+
+        printf("\n");
+    }
+
 }
