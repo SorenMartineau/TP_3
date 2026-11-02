@@ -90,7 +90,15 @@ void afficherNotes(int tab_notes[100][100], int nombre_eleves){
 
 float calculerMoyenneEleve(int indice_eleves, int tab_notes[100][100]){
 
-    float total = (tab_notes[0][0] + tab_notes[0][1] + tab_notes[0][2]);
+    float total = (tab_notes[indice_eleves-1][0] + tab_notes[indice_eleves-1][1] + tab_notes[indice_eleves][2]);
     return total / 3;
 
+}
+
+float calculerMoyenneGenerale(int nombre_eleves, int tab_notes[100][100]){
+    float total = 0;
+    for (int i = 1; i < nombre_eleves+1; i++){ 
+        total += calculerMoyenneEleve(i, tab_notes);
+    }
+    return total / nombre_eleves;
 }
