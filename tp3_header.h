@@ -2,6 +2,6 @@
 #define HEADER 
 
 void afficherMenu();
-
+int lireChoix();
 
 #endif
