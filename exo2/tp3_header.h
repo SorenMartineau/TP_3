@@ -2,5 +2,6 @@
 #define HEADER 
 
 void afficherMenu();
+int saisirMontant();
 
 #endif

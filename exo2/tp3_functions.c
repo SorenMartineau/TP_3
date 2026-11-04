@@ -7,5 +7,16 @@ void afficherMenu(){
     printf("=== BANQUE - DISTRIBUTEUR ===\n");
     printf("1. Faire un retrait\n");
     printf("2. Quitter\n");
- 
+
 }
+
+int saisirMontant(){
+
+    int montant;
+    scanf("%d",&montant);
+    return montant;    
+
+}
+ 
+
+
