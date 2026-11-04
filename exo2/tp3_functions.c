@@ -34,6 +34,7 @@ int montantValide(int montant){
 void calculDistribution(int montant){
 
     int billet[4] = {50,20,10,5};
+    printf("billets distribues: \n");
     for (int i = 0; i < 4; i++){
         if (montant / billet[i] != 0){
             printf("%d billets de %d euros\n", montant / billet[i], billet[i]);
