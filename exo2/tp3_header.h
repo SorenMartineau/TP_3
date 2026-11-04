@@ -3,5 +3,6 @@
 
 void afficherMenu();
 int saisirMontant();
+int montantValide(int montant);
 
 #endif
