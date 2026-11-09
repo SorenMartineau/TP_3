@@ -52,8 +52,6 @@ void creationPointe(char img[100][100], int n, int width){
 
 
 void creationCentre(char img[100][100], int n, int width){
-    int mid = width / 2;
-
     img[n][0] = '.';
     img[n][width-1] = '.';
 
@@ -76,5 +74,37 @@ void creationCentre(char img[100][100], int n, int width){
         img[n+i][width-i*2-2] = 'V';
     
     }
+
+}
+
+
+void creationJambes(char img[100][100], int n, int width){
+    int mid = width / 2;
+    int debut = (n-2)*2+1;
+    int fin = (n-2)*2+1;
+
+    for (int j = 0; j < width; j++)
+    {
+        img[n-1][j] = '_';
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        img[i][mid-i] = 'A';
+
+        for (int j = debut-i; j < 0; j++)
+        {
+            img[i][mid+j] = 'S';
+        }
+
+        for (int j = (n-2)*2+1-i; j < (n-2)*2+1+i; j++)
+        {
+            img[i][mid+j] = 'S';
+        }
+
+        img[i][mid+i] = 'A';
+    }    
+    
+    
 
 }
