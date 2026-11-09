@@ -19,7 +19,7 @@ void affichage(char img[100][100], int max_height, int width){
     {
         for (int j = 0; j < width; j++)
         {
-            printf("%c ", img[i][j]);
+            printf("%c", img[i][j]);
         }
         printf("\n");
     }
